@@ -1,0 +1,12 @@
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\bin\Debug\ControleEstoqueAPP.exe.config
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\bin\Debug\ControleEstoqueAPP.exe
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\bin\Debug\ControleEstoqueAPP.pdb
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\bin\Debug\ControleEstoqueAPP.xml
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.vbprojAssemblyReference.cache
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.Resources.resources
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.vbproj.GenerateResource.cache
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.vbproj.CoreCompileInputs.cache
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.exe
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.xml
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.pdb
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.stockControll.resources
