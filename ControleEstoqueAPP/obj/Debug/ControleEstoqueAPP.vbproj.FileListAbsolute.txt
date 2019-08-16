@@ -9,4 +9,7 @@ C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\Co
 C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.exe
 C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.xml
 C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.pdb
-C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.stockControll.resources
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.CashFlow.resources
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.StockControl.resources
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.Login.resources
+C:\Users\vhpinto\source\repos\ControleEstoqueAPP\ControleEstoqueAPP\obj\Debug\ControleEstoqueAPP.EmployeeControl.resources

@@ -1,9 +1,14 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 
-Public Class StockControll
+Public Class StockControl
 
     ReadOnly connection As New SqlConnection("Server= localhost; Database = vb; Integrated Security = true")
+    Dim employee As Employee
+    Sub New(loginEmployee As Employee)
+        employee = loginEmployee
+        InitializeComponent()
+    End Sub
     Private Sub StockControll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim command As New SqlCommand("select * from product", connection)
         Dim adapter As New SqlDataAdapter(command)
@@ -13,6 +18,12 @@ Public Class StockControll
         ProductData.RowTemplate.Height = 100
         Dim imgc As New DataGridViewImageColumn
         ProductData.DataSource = table
+        If employee.JobRole = "Admin" Then
+            ButtonEmployees.Visible = True
+        Else
+            ButtonEmployees.Visible = False
+        End If
+
 
     End Sub
 
@@ -104,5 +115,19 @@ Public Class StockControll
             MessageBox.Show("Unsuccessful Operation, Error: " & er.Message)
             connection.Close()
         End Try
+    End Sub
+
+    Private Sub ButtonCashFlow_Click(sender As Object, e As EventArgs) Handles ButtonCashFlow.Click
+        Dim f As CashFlow = New CashFlow(employee)
+        Hide()
+        f.ShowDialog()
+        Close()
+    End Sub
+
+    Private Sub ButtonEmployees_Click(sender As Object, e As EventArgs) Handles ButtonEmployees.Click
+        Dim f As EmployeeControl = New EmployeeControl(employee)
+        Hide()
+        f.ShowDialog()
+        Close()
     End Sub
 End Class

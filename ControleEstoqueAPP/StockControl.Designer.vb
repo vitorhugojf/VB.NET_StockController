@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class StockControll
+Partial Class StockControl
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class StockControll
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StockControll))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StockControl))
         Me.ProductData = New System.Windows.Forms.DataGridView()
         Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.TextBoxDescription = New System.Windows.Forms.TextBox()
@@ -38,7 +38,9 @@ Partial Class StockControll
         Me.FindByName = New System.Windows.Forms.Label()
         Me.TextBoxFindById = New System.Windows.Forms.TextBox()
         Me.FindById = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Value = New System.Windows.Forms.Label()
+        Me.ButtonCashFlow = New System.Windows.Forms.Button()
+        Me.ButtonEmployees = New System.Windows.Forms.Button()
         CType(Me.ProductData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -124,30 +126,50 @@ Partial Class StockControll
         resources.ApplyResources(Me.FindById, "FindById")
         Me.FindById.Name = "FindById"
         '
-        'Label1
+        'Value
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Me.Value, "Value")
+        Me.Value.Name = "Value"
         '
-        'StockControll
+        'ButtonCashFlow
+        '
+        Me.ButtonCashFlow.BackColor = System.Drawing.SystemColors.Desktop
+        resources.ApplyResources(Me.ButtonCashFlow, "ButtonCashFlow")
+        Me.ButtonCashFlow.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonCashFlow.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonCashFlow.Name = "ButtonCashFlow"
+        Me.ButtonCashFlow.UseVisualStyleBackColor = False
+        '
+        'ButtonEmployees
+        '
+        Me.ButtonEmployees.BackColor = System.Drawing.SystemColors.Desktop
+        resources.ApplyResources(Me.ButtonEmployees, "ButtonEmployees")
+        Me.ButtonEmployees.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonEmployees.Name = "ButtonEmployees"
+        Me.ButtonEmployees.UseVisualStyleBackColor = False
+        '
+        'StockControl
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ButtonCashFlow)
+        Me.Controls.Add(Me.ButtonEmployees)
+        Me.Controls.Add(Me.Name)
+        Me.Controls.Add(Me.TextBoxName)
+        Me.Controls.Add(Me.Value)
+        Me.Controls.Add(Me.TextBoxValue)
+        Me.Controls.Add(Me.Amount)
+        Me.Controls.Add(Me.TextBoxAmount)
+        Me.Controls.Add(Me.Description)
+        Me.Controls.Add(Me.TextBoxDescription)
+        Me.Controls.Add(Me.ButtonCreate)
+        Me.Controls.Add(Me.ButtonUpdate)
+        Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.FindById)
         Me.Controls.Add(Me.TextBoxFindById)
         Me.Controls.Add(Me.FindByName)
         Me.Controls.Add(Me.TextBoxFindByNameOrDescription)
-        Me.Controls.Add(Me.ButtonDelete)
-        Me.Controls.Add(Me.ButtonCreate)
-        Me.Controls.Add(Me.ButtonUpdate)
-        Me.Controls.Add(Me.Amount)
-        Me.Controls.Add(Me.Description)
-        Me.Controls.Add(Me.Name)
-        Me.Controls.Add(Me.TextBoxAmount)
-        Me.Controls.Add(Me.TextBoxValue)
-        Me.Controls.Add(Me.TextBoxDescription)
-        Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.ProductData)
         CType(Me.ProductData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -170,5 +192,7 @@ Partial Class StockControll
     Friend WithEvents FindByName As Label
     Friend WithEvents TextBoxFindById As TextBox
     Friend WithEvents FindById As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Value As Label
+    Friend WithEvents ButtonCashFlow As Button
+    Friend WithEvents ButtonEmployees As Button
 End Class
