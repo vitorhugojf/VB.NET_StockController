@@ -28,7 +28,7 @@ Partial Class StockControl
         Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.TextBoxValue = New System.Windows.Forms.TextBox()
         Me.TextBoxAmount = New System.Windows.Forms.TextBox()
-        Me.Name = New System.Windows.Forms.Label()
+        Me.NameProduct = New System.Windows.Forms.Label()
         Me.Description = New System.Windows.Forms.Label()
         Me.Amount = New System.Windows.Forms.Label()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -73,10 +73,10 @@ Partial Class StockControl
         resources.ApplyResources(Me.TextBoxAmount, "TextBoxAmount")
         Me.TextBoxAmount.Name = "TextBoxAmount"
         '
-        'Name
+        'NameProduct
         '
-        resources.ApplyResources(Me.Name, "Name")
-        Me.Name.Name = "Name"
+        resources.ApplyResources(Me.NameProduct, "NameProduct")
+        Me.NameProduct.Name = "NameProduct"
         '
         'Description
         '
@@ -155,7 +155,7 @@ Partial Class StockControl
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.ButtonCashFlow)
         Me.Controls.Add(Me.ButtonEmployees)
-        Me.Controls.Add(Me.Name)
+        Me.Controls.Add(Me.NameProduct)
         Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.Value)
         Me.Controls.Add(Me.TextBoxValue)
@@ -171,6 +171,7 @@ Partial Class StockControl
         Me.Controls.Add(Me.FindByName)
         Me.Controls.Add(Me.TextBoxFindByNameOrDescription)
         Me.Controls.Add(Me.ProductData)
+        Me.Name = "StockControl"
         CType(Me.ProductData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -182,7 +183,7 @@ Partial Class StockControl
     Friend WithEvents TextBoxDescription As TextBox
     Friend WithEvents TextBoxValue As TextBox
     Friend WithEvents TextBoxAmount As TextBox
-    Friend WithEvents Name As Label
+    Friend WithEvents NameProduct As Label
     Friend WithEvents Description As Label
     Friend WithEvents Amount As Label
     Friend WithEvents ButtonUpdate As Button

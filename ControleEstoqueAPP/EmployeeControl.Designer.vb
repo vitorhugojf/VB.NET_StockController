@@ -33,7 +33,7 @@ Partial Class EmployeeControl
         Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.ButtonCreate = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
-        Me.Name = New System.Windows.Forms.Label()
+        Me.NameEmployee = New System.Windows.Forms.Label()
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
         Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.Username = New System.Windows.Forms.Label()
@@ -153,16 +153,15 @@ Partial Class EmployeeControl
         Me.ButtonUpdate.Text = "Update"
         Me.ButtonUpdate.UseVisualStyleBackColor = True
         '
-        'Name
+        'NameEmployee
         '
-        Me.Name.AutoSize = True
-        Me.Name.Font = New System.Drawing.Font("Verdana", 9.75!)
-        Me.Name.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Name.Location = New System.Drawing.Point(6, 34)
-        Me.Name.Name = "Name"
-        Me.Name.Size = New System.Drawing.Size(44, 16)
-        Me.Name.TabIndex = 28
-        Me.Name.Text = "Name"
+        Me.NameEmployee.AutoSize = True
+        Me.NameEmployee.Font = New System.Drawing.Font("Verdana", 9.75!)
+        Me.NameEmployee.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.NameEmployee.Location = New System.Drawing.Point(6, 34)
+        Me.NameEmployee.Name = "NameEmployee"
+        Me.NameEmployee.Size = New System.Drawing.Size(0, 16)
+        Me.NameEmployee.TabIndex = 28
         '
         'TextBoxUsername
         '
@@ -222,6 +221,7 @@ Partial Class EmployeeControl
         '
         Me.TextBoxLastActive.Location = New System.Drawing.Point(274, 160)
         Me.TextBoxLastActive.Name = "TextBoxLastActive"
+        Me.TextBoxLastActive.ReadOnly = True
         Me.TextBoxLastActive.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxLastActive.TabIndex = 43
         '
@@ -260,7 +260,7 @@ Partial Class EmployeeControl
         Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.ButtonCreate)
         Me.Controls.Add(Me.ButtonUpdate)
-        Me.Controls.Add(Me.Name)
+        Me.Controls.Add(Me.NameEmployee)
         Me.Controls.Add(Me.TextBoxUsername)
         Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.FindById)
@@ -269,6 +269,7 @@ Partial Class EmployeeControl
         Me.Controls.Add(Me.TextBoxFindByNameOrUsername)
         Me.Controls.Add(Me.EmployeeData)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "EmployeeControl"
         Me.Text = "EmployeeControl"
         CType(Me.EmployeeData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -286,7 +287,7 @@ Partial Class EmployeeControl
     Friend WithEvents ButtonDelete As Button
     Friend WithEvents ButtonCreate As Button
     Friend WithEvents ButtonUpdate As Button
-    Friend WithEvents Name As Label
+    Friend WithEvents NameEmployee As Label
     Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents TextBoxName As TextBox
     Friend WithEvents Username As Label

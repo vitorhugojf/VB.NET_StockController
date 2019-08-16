@@ -18,10 +18,21 @@ Public Class StockControl
         ProductData.RowTemplate.Height = 100
         Dim imgc As New DataGridViewImageColumn
         ProductData.DataSource = table
+        ProductData.ReadOnly = True
         If employee.JobRole = "Admin" Then
             ButtonEmployees.Visible = True
+            ButtonCreate.Visible = True
+            ButtonUpdate.Visible = True
+            ButtonDelete.Visible = True
         Else
             ButtonEmployees.Visible = False
+            ButtonCreate.Visible = False
+            ButtonUpdate.Visible = False
+            ButtonDelete.Visible = False
+            TextBoxName.ReadOnly = True
+            TextBoxValue.ReadOnly = True
+            TextBoxAmount.ReadOnly = True
+            TextBoxDescription.ReadOnly = True
         End If
 
 

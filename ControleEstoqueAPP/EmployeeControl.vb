@@ -18,6 +18,7 @@ Public Class EmployeeControl
         EmployeeData.RowTemplate.Height = 100
         Dim imgc As New DataGridViewImageColumn
         EmployeeData.DataSource = table
+        EmployeeData.ReadOnly = True
     End Sub
 
     Private Sub EmployeeData_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EmployeeData.CellClick
@@ -62,12 +63,24 @@ Public Class EmployeeControl
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         Dim ms As New MemoryStream
-        'Dim updateQuery As String = "UPDATE employee SET name = '" & TextBoxName.Text & "',username = '" &
-        'TextBoxUsername.Text & "',password = '" & TextBoxPassword.Text & "',amount = " & TextBoxAmount.Text & " WHERE id = " & ProductData.CurrentRow.Cells(0).Value
+        Dim updateQuery As String = "UPDATE employee SET name = '" & TextBoxName.Text & "',username = '" &
+        TextBoxUsername.Text & "',password = '" & TextBoxPassword.Text & "',jobrole = '" & TextBoxJobRole.Text & "' WHERE id = " & EmployeeData.CurrentRow.Cells(0).Value
 
-        'Dim command As New SqlCommand(updateQuery, connection)
+        Dim command As New SqlCommand(updateQuery, connection)
 
-        'ExecuteMyQuery(command)
+        ExecuteMyQuery(command)
+    End Sub
+
+    Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
+        If MsgBox("This action will Delete the Employee with the Id " & EmployeeData.CurrentRow.Cells(0).Value & ", Are you Sure?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            Dim deleteQuery As String = "DELETE FROM Employee WHERE id = " & EmployeeData.CurrentRow.Cells(0).Value
+
+            Dim command As New SqlCommand(deleteQuery, connection)
+
+            ExecuteMyQuery(command)
+        Else
+            MsgBox("The Employee wasn't deleted")
+        End If
     End Sub
 
     Private Sub ExecuteMyQuery(ByRef command As SqlCommand)
