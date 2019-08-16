@@ -23,11 +23,10 @@ Public Class StockControll
         TextBoxAmount.Text = ProductData.CurrentRow.Cells(4).Value
     End Sub
 
-    Private Sub TextBoxFindById_TextChanged(sender As Object, e As EventArgs) Handles TextBoxFindById.TextChanged
-
+    Private Sub TextBoxFilters_TextChanged(sender As Object, e As EventArgs) Handles TextBoxFindById.TextChanged, TextBoxFindByNameOrDescription.TextChanged
         Dim id As Integer
         If Integer.TryParse(TextBoxFindById.Text, id) Then
-            Dim searchQuery As String = "select * from product WHERE id = " & id
+            Dim searchQuery As String = "SELECT * From product WHERE id = " & id & " AND CONCAT(name,description) like '%" & TextBoxFindByNameOrDescription.Text & "%'"
             Dim command As New SqlCommand(searchQuery, connection)
             Dim adapter As New SqlDataAdapter(command)
             Dim table As New DataTable()
@@ -36,7 +35,7 @@ Public Class StockControll
             ProductData.RowTemplate.Height = 100
             ProductData.DataSource = table
         Else
-            Dim searchQuery As String = "select * from product"
+            Dim searchQuery As String = "SELECT * From product WHERE CONCAT(name,description) like '%" & TextBoxFindByNameOrDescription.Text & "%'"
             Dim command As New SqlCommand(searchQuery, connection)
             Dim adapter As New SqlDataAdapter(command)
             Dim table As New DataTable()
@@ -45,19 +44,6 @@ Public Class StockControll
             ProductData.RowTemplate.Height = 100
             ProductData.DataSource = table
         End If
-
-    End Sub
-
-    Private Sub TextBoxFindByName_TextChanged(sender As Object, e As EventArgs) Handles TextBoxFindByName.TextChanged
-        Dim searchQuery As String = "SELECT * From product WHERE CONCAT(name,description) like '%" & TextBoxFindByName.Text & "%'"
-
-        Dim command As New SqlCommand(searchQuery, connection)
-        Dim adapter As New SqlDataAdapter(command)
-        Dim table As New DataTable()
-        adapter.Fill(table)
-        ProductData.AllowUserToAddRows = False
-        ProductData.RowTemplate.Height = 100
-        ProductData.DataSource = table
     End Sub
 
     Private Sub ButtonCreate_Click(sender As Object, e As EventArgs) Handles ButtonCreate.Click
@@ -81,7 +67,7 @@ Public Class StockControll
 
     Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
 
-        If MsgBox("This action will Delete the Product with the Id=" & ProductData.CurrentRow.Cells(0).Value & ", Are you Sure?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+        If MsgBox("This action will Delete the Product with the Id " & ProductData.CurrentRow.Cells(0).Value & ", Are you Sure?", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
             Dim deleteQuery As String = "DELETE FROM product WHERE id = " & ProductData.CurrentRow.Cells(0).Value
 
             Dim command As New SqlCommand(deleteQuery, connection)

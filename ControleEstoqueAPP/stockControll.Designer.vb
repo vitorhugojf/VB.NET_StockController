@@ -34,7 +34,7 @@ Partial Class StockControll
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.ButtonCreate = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
-        Me.TextBoxFindByName = New System.Windows.Forms.TextBox()
+        Me.TextBoxFindByNameOrDescription = New System.Windows.Forms.TextBox()
         Me.FindByName = New System.Windows.Forms.Label()
         Me.TextBoxFindById = New System.Windows.Forms.TextBox()
         Me.FindById = New System.Windows.Forms.Label()
@@ -104,10 +104,10 @@ Partial Class StockControll
         Me.ButtonDelete.Name = "ButtonDelete"
         Me.ButtonDelete.UseVisualStyleBackColor = True
         '
-        'TextBoxFindByName
+        'TextBoxFindByNameOrDescription
         '
-        resources.ApplyResources(Me.TextBoxFindByName, "TextBoxFindByName")
-        Me.TextBoxFindByName.Name = "TextBoxFindByName"
+        resources.ApplyResources(Me.TextBoxFindByNameOrDescription, "TextBoxFindByNameOrDescription")
+        Me.TextBoxFindByNameOrDescription.Name = "TextBoxFindByNameOrDescription"
         '
         'FindByName
         '
@@ -137,7 +137,7 @@ Partial Class StockControll
         Me.Controls.Add(Me.FindById)
         Me.Controls.Add(Me.TextBoxFindById)
         Me.Controls.Add(Me.FindByName)
-        Me.Controls.Add(Me.TextBoxFindByName)
+        Me.Controls.Add(Me.TextBoxFindByNameOrDescription)
         Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.ButtonCreate)
         Me.Controls.Add(Me.ButtonUpdate)
@@ -166,7 +166,7 @@ Partial Class StockControll
     Friend WithEvents ButtonUpdate As Button
     Friend WithEvents ButtonCreate As Button
     Friend WithEvents ButtonDelete As Button
-    Friend WithEvents TextBoxFindByName As TextBox
+    Friend WithEvents TextBoxFindByNameOrDescription As TextBox
     Friend WithEvents FindByName As Label
     Friend WithEvents TextBoxFindById As TextBox
     Friend WithEvents FindById As Label
