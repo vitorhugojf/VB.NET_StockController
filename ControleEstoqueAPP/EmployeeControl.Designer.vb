@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class EmployeeControl
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class EmployeeControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmployeeControl))
         Me.TextBoxFindById = New System.Windows.Forms.TextBox()
@@ -42,7 +42,7 @@ Partial Class EmployeeControl
         Me.LastActive = New System.Windows.Forms.Label()
         Me.TextBoxLastActive = New System.Windows.Forms.TextBox()
         Me.JobRole = New System.Windows.Forms.Label()
-        Me.TextBoxJobRole = New System.Windows.Forms.TextBox()
+        Me.ComboBoxJobRole = New System.Windows.Forms.ComboBox()
         CType(Me.EmployeeData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,8 +160,9 @@ Partial Class EmployeeControl
         Me.NameEmployee.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.NameEmployee.Location = New System.Drawing.Point(6, 34)
         Me.NameEmployee.Name = "NameEmployee"
-        Me.NameEmployee.Size = New System.Drawing.Size(0, 16)
+        Me.NameEmployee.Size = New System.Drawing.Size(44, 16)
         Me.NameEmployee.TabIndex = 28
+        Me.NameEmployee.Text = "Name"
         '
         'TextBoxUsername
         '
@@ -236,22 +237,26 @@ Partial Class EmployeeControl
         Me.JobRole.TabIndex = 42
         Me.JobRole.Text = "Job Role"
         '
-        'TextBoxJobRole
+        'ComboBoxJobRole
         '
-        Me.TextBoxJobRole.Location = New System.Drawing.Point(8, 160)
-        Me.TextBoxJobRole.Name = "TextBoxJobRole"
-        Me.TextBoxJobRole.Size = New System.Drawing.Size(250, 20)
-        Me.TextBoxJobRole.TabIndex = 41
+        Me.ComboBoxJobRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxJobRole.FormattingEnabled = True
+        Me.ComboBoxJobRole.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ComboBoxJobRole.Items.AddRange(New Object() {"Admin", "Caixa"})
+        Me.ComboBoxJobRole.Location = New System.Drawing.Point(9, 159)
+        Me.ComboBoxJobRole.Name = "ComboBoxJobRole"
+        Me.ComboBoxJobRole.Size = New System.Drawing.Size(250, 21)
+        Me.ComboBoxJobRole.TabIndex = 45
         '
         'EmployeeControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(537, 527)
+        Me.Controls.Add(Me.ComboBoxJobRole)
         Me.Controls.Add(Me.LastActive)
         Me.Controls.Add(Me.TextBoxLastActive)
         Me.Controls.Add(Me.JobRole)
-        Me.Controls.Add(Me.TextBoxJobRole)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.Username)
@@ -296,5 +301,5 @@ Partial Class EmployeeControl
     Friend WithEvents LastActive As Label
     Friend WithEvents TextBoxLastActive As TextBox
     Friend WithEvents JobRole As Label
-    Friend WithEvents TextBoxJobRole As TextBox
+    Friend WithEvents ComboBoxJobRole As ComboBox
 End Class

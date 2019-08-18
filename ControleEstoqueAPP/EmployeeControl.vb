@@ -2,7 +2,7 @@
 Imports System.IO
 
 Public Class EmployeeControl
-    ReadOnly connection As New SqlConnection("Server= localhost; Database = vb; Integrated Security = true")
+    ReadOnly connection As New SqlConnection("Server= localhost; Database = stock; Integrated Security = true")
     Dim employee As Employee
 
     Sub New(loginEmployee As Employee)
@@ -25,7 +25,7 @@ Public Class EmployeeControl
         TextBoxName.Text = EmployeeData.CurrentRow.Cells(1).Value
         TextBoxUsername.Text = EmployeeData.CurrentRow.Cells(2).Value
         TextBoxPassword.Text = EmployeeData.CurrentRow.Cells(3).Value
-        TextBoxJobRole.Text = EmployeeData.CurrentRow.Cells(4).Value
+        ComboBoxJobRole.Text = EmployeeData.CurrentRow.Cells(4).Value
         TextBoxLastActive.Text = EmployeeData.CurrentRow.Cells(5).Value
     End Sub
 
@@ -54,8 +54,8 @@ Public Class EmployeeControl
 
     Private Sub ButtonCreate_Click(sender As Object, e As EventArgs) Handles ButtonCreate.Click
         Dim ms As New MemoryStream
-        Dim insertQuery As String = "INSERT INTO employee(name,username,password,jobrole,lastactive)
-            VALUES ('" & TextBoxName.Text & "','" & TextBoxUsername.Text & "','" & TextBoxPassword.Text & "','" & TextBoxJobRole.Text & "','" & Date.Now & "');"
+        Dim insertQuery As String = "INSERT INTO employee(name,username,password,jobrole)
+            VALUES ('" & TextBoxName.Text & "','" & TextBoxUsername.Text & "','" & TextBoxPassword.Text & "','" & ComboBoxJobRole.Text & "');"
         Dim command As New SqlCommand(insertQuery, connection)
 
         ExecuteMyQuery(command)
@@ -64,7 +64,7 @@ Public Class EmployeeControl
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         Dim ms As New MemoryStream
         Dim updateQuery As String = "UPDATE employee SET name = '" & TextBoxName.Text & "',username = '" &
-        TextBoxUsername.Text & "',password = '" & TextBoxPassword.Text & "',jobrole = '" & TextBoxJobRole.Text & "' WHERE id = " & EmployeeData.CurrentRow.Cells(0).Value
+        TextBoxUsername.Text & "',password = '" & TextBoxPassword.Text & "',jobrole = '" & ComboBoxJobRole.Text & "' WHERE id = " & EmployeeData.CurrentRow.Cells(0).Value
 
         Dim command As New SqlCommand(updateQuery, connection)
 
@@ -101,7 +101,7 @@ Public Class EmployeeControl
             TextBoxName.Text = EmployeeData.CurrentRow.Cells(1).Value
             TextBoxUsername.Text = EmployeeData.CurrentRow.Cells(2).Value
             TextBoxPassword.Text = EmployeeData.CurrentRow.Cells(3).Value
-            TextBoxJobRole.Text = EmployeeData.CurrentRow.Cells(4).Value
+            ComboBoxJobRole.Text = EmployeeData.CurrentRow.Cells(4).Value
             TextBoxLastActive.Text = EmployeeData.CurrentRow.Cells(5).Value
 
             connection.Close()

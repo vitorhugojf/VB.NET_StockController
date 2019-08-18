@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class StockControl
 
-    ReadOnly connection As New SqlConnection("Server= localhost; Database = vb; Integrated Security = true")
+    ReadOnly connection As New SqlConnection("Server= localhost; Database = stock; Integrated Security = true")
     Dim employee As Employee
     Sub New(loginEmployee As Employee)
         employee = loginEmployee

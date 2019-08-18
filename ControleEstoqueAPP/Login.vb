@@ -2,7 +2,7 @@
 
 Public Class Login
 
-    ReadOnly connection As New SqlConnection("Server= localhost; Database = vb; Integrated Security = true")
+    ReadOnly connection As New SqlConnection("Server= localhost; Database = stock; Integrated Security = true")
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
         Dim searchQuery As String = "SELECT * From employee WHERE username = '" & TextBoxUsername.Text & "' AND password = '" & TextBoxPassword.Text & "'"
@@ -16,8 +16,9 @@ Public Class Login
                                                        table.Rows.Item(0).ItemArray(3), table.Rows.Item(0).ItemArray(4))
             MsgBox("Successfully logged in")
 
+            
             connection.Open()
-            Dim updateQuery As String = "UPDATE employee SET LastActive = '" & Date.Now & "' WHERE id = " & employee.Id
+            Dim updateQuery As String = "UPDATE employee SET LastActive = '" & Date.Now.Year & "-" & Date.Now.Month & "-" & Date.Now.Day & " " & Date.Now.Hour & ":" & Date.Now.Minute & ":" & Date.Now.Second & "' WHERE id = " & employee.Id
             Dim commandUpdate As New SqlCommand(updateQuery, connection)
             commandUpdate.ExecuteNonQuery()
             connection.Close()
